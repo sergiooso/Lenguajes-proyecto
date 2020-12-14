@@ -1,0 +1,59 @@
+<lenguaje>::=<instrucciones>
+<instrucciones>::=<operadigito><esp>include<aca><lib><cca><funprinci>
+<lib>::=stdio.h|conio.h
+<operadigito>::=#
+<aca>::=<
+<cca>::=>
+
+<funprinci>::=<tipodato><pr><pab><pcr><abll><listfunciones><cell>
+<listfunciones>::=Funcion<variable><pab><parametros><pcr><sentencias>|<opvar>
+<tipodato>::=void|int|float|double|char|/n
+<parametros>::=<vars>
+<pr>::=main
+<pab>::=(
+<pcr>::=)
+<ptcoma>::=;
+<coma>::=,
+<amp>::=&
+<esp>::=" "
+<abll>::={
+<cell>::=}
+
+<vars>::=<tipodato><nomvar><ptcoma>
+<nomvar>::=<cadena><coma><nomvar>|<cadena>
+<variable>::= &<alfaminus>|&<alfaminus><digito>|&<alfamayus>|&<alfamayus><digito>|
+<opvar>::=<nomvar><operabasic><nomvar>
+
+<cadena>::=<palabra><palabra2>
+<palabra>::=<alfaminus>|<palabra><digito>|<alfamayus>|<alfaminus>|<esp>
+<palabra2>::=<esp><cadena>|ξ
+
+<operabasic>::=+|-|*|/
+<operador relacional>::= =|<>|<|>|<=|>=
+<comia>::="
+<comic>::="
+
+<alfamayus>::=A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z
+<alfaminus>::=a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z
+<digito>::=0|1|2|3|4|5|6|7|8|9
+
+<sentencias>::=<SentenciaCondicional> | <Bucle mientras> | <Bloque> |<Alternativas> | <funimprime>
+
+<SentenciaCondicional>::= if<cond> then <sentencia> else <sentencia>
+<cond>::= <variable><operador relacional><expresion>
+<sentencia>::=<variable>::=<expresion>
+<expresion>::= <variable>|<digito>
+
+<Bucle mientras>::=while<cond> do<sentencia>
+<Bloque>::=for<cond> to<expresion> do<sentencia>
+<Alternativas>::=case<expresion> of<caso> else<sentencia>end
+<caso>::=<sentencia>
+
+<funimprime>::=<fr><pab><pcr><ptcoma>
+<tipoform>::=%d|%i|%f|%c
+<fr>::=printf|scanf|return
+<fprintf>::=<fr><pab><comia><cadena><comic><cadena2><pcr><ptcoma>
+<cadena2>::=<coma><nomvar>|ξ
+<fcanf>::=<fr><pab><comia><tipoform><comic><amp><nomvar><pcr><ptcoma>
+<freturn>::=<fr><val><ptcoma>
+<val>::=0|1
