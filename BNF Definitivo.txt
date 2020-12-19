@@ -1,0 +1,79 @@
+Bloques
+<lenguaje> ::= “programa”<bloque>
+<bloque> ::= “{“ <sentencias> ”}”
+<sentencias> ::= <sentencia> | <sentencias><sentencia>
+
+Declaración
+<declaracion> ::= <tipo> <variable>
+<tipo> ::= “real” | “entero” | “cadena”
+
+Estructuras
+<sentencia> ::= <sentencia no condicional> | <sentencia condicional>
+<sentencia no condicional> ::= <declaracion> | <asignacion> | <imprimir> | <leer>
+<asignacion> ::=  <declaracion de tipo>  “=” <expresion> | <variable> “=” <expresion>
+<imprimir> ::= “imprimir” <variable> | "imprimir" <cadena>
+<leer> ::= “leer” <variable>
+
+<sentencia condicional> ::= <si> |<mientras> | <sino>
+<si> ::= “si”  "("<condicion>")" “entonces” <bloque>
+<sino> ::= “si” "("<condicion>")" “entonces” <bloque> sino <bloque>
+<mientras> ::= “mientras” "("<condicion>")" <bloque>
+
+<condicion> ::= <variable> <operador relacional> <expresion> | <variable> | "!"<variable> | <variable> <operador relacional> <expresion>  <operador logico>  <variable> <operador relacional> <expresion>
+<expresion> ::= <termino><operador aditivo><expresion>| <termino>
+<termino> ::= <factor><operador multiplicativo><termino> | <factor> 
+<factor> ::= <real> | ( <expresion> )
+
+Números y Cadenas
+<real> ::= <entero> | <entero> <parte decimal>
+<entero> ::= <entero sin signo> | + <entero sin signo> | - <entero sin signo>
+<entero sin signo> ::= <digito> | <entero sin signo> <digito>
+<parte decimal> . <entero sin signo>
+
+<cadena> ::= <caracteres> | <cadena> <caracteres>
+<caracteres> ::= <caracter> | <caracteres> <caracter>
+<caracter> :: = <letra> | <digito> | <simbolo>
+
+
+Nombre de Variable
+<variable> ::= <id variable>  // Lo mismo, por que no definimos variable como id de un solo?
+<id variable> ::= <id>
+<id> ::= <letra> | <id> <letra> | <id> <digito>
+
+Terminales
+<letra> ::= “a” | “b” | “c” | “d” | “e” | “f” | “g” | “h” | “i” | “j” | “k” | “l” | “m” | “n” | “o” | “p” | “q” | “r” | “s” | “t” | “u” | “v” | “w” | “x” | “y” | “z” | “A” | “B” | “C” | “D” | “E” | “F” | “G” | “H“ | “I” | “J” | “K” | “L” | “M” | “N” | “O” | “P” | “Q” | “R” | “S” | “T” | “U” | “V “| “W” | “X” | “Y” | “Z”
+<digito> ::= “0” | “1” | “2” | “3” | “4” | “5” | “6” | “7” | “8” | “9”
+<simbolo> ::=  “|” | " " | “!” | “#” | “$” | “%” | “&” | “(“ | “)” | “*” | “+” | “,” | “-“ | “.” | “/” | “:” | “;” | “>” | “=” | “<” | “?” | “@” | “[“ | “\” | “]” | “^” |” _ “| “`” | “{“ | “}” | “~”
+
+<operador> ::= <operador aritmetico> | <operador relacional> | <operador logico> 
+<operador aritmetico> ::= <operador aditivo> | <operador multiplicativo>
+<operador aditivo> ::= “+” | “-“  
+<operador multiplicativo> “*” | “/” | “%”
+<operador relacional> ::= “<” | “<=” | “==” | ”!=” | “>” | “>=”
+<operador logico> ::= "&&" | " || "
+
+<palabras reservadas> ::= "programa" | "real" | "entero" | "cadena" | "imprimir" | "leer" | "si" | "entonces" | "sino" | "mientras"
+
+
+/******* AGREGADO DE MOMENTO ******/
+- operadores lógicos en <operador> y la respectiva definicion de <operador logico>...no se si seria conveniente arrastralo de simbolos asi que por eso la definición
+- definición de <operador aritmetico>, debido a que no estaba
+- en <expresion> se agregaron las definiciones siguientes:
+	 "<variable> |"!" <variable> |<variable> <operador relacional> <expresion>  <operador logico>  <variable> <operador relacional> <expresion>"
+   cabe destacar que no incluí recursividad y nos veriamos obligados a trabajar con booleano tal vez
+- en todas las estructuras creo qeu deberia ir ( <condicion> ).. por cuestiones de sintaxis
+- en <termino> en el caso de que se use el "/" deberiamos poner la condicion de que no fuera 0 ese denomindaor, asi como habiamos hecho anteriormente:
+	SOLAMENTE EJEMPLO
+
+ 		operaciones aritmeticas:
+
+   			<operaciones>::-<suma>|<resta>|<multiplicacion>|<division>|<modulo>
+   			<suma>::- <real> + <real> 
+   			<resta>::-<real> - <real> 
+   			<multiplicacion>::-<real> * <real> 
+   			<division>::-<real> / <denominador>
+   			<modulo>::-<real> % <denominador>
+
+	       Definiendo denominador:
+
+   		<denominador>::-<no_cero>|<denominador> 0|<signo><denominador>
